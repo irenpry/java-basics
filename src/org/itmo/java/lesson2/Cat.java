@@ -22,22 +22,17 @@ public class Cat {
     }
 
     public Cat(String name, int age, byte gender) {
-        this(name,age);
+        this(name, age);
         this.gender = gender;
     }
 
     public Cat(String name, int age, byte gender, Breed breed) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        this(name, age, gender);
         this.breed = breed;
     }
 
     public Cat(String name, int age, byte gender, Breed breed, boolean isNeutered) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.breed = breed;
+        this(name, age, gender, breed);
         this.isNeutered = isNeutered;
     }
 
