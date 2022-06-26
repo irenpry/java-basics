@@ -10,7 +10,7 @@ public class Main {
         System.out.println(Calculator.difference(5,6.1));
         System.out.println(Calculator.multiply(5,6));
         System.out.println(Calculator.multiply(5f,6));
-        System.out.println(Calculator.multiply(5,6.1));
+        System.out.println(Calculator.multiply(5,6.2));
         System.out.println(Calculator.divide(5,2));
         System.out.println(Calculator.divide(5f,0));
         System.out.println(Calculator.divide(5d,2.5));
