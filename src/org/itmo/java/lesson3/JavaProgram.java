@@ -1,7 +1,5 @@
 package org.itmo.java.lesson3;
 
-import java.util.Date;
-
 public class JavaProgram {
 
     public static void main(String[] args) {
