@@ -2,6 +2,10 @@ package org.itmo.java.lesson2;
 
 public class Calculator {
 
+    static {
+        System.out.println("Запустился статик блок");
+    }
+
     public static int summ(int a, int b) {
         return a + b;
     }
