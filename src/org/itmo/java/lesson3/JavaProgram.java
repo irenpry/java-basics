@@ -1,5 +1,7 @@
 package org.itmo.java.lesson3;
 
+import java.lang.reflect.Array;
+
 public class JavaProgram {
 
     public static void main(String[] args) {
