@@ -37,7 +37,6 @@ public class Part2 {
         System.out.println(Arrays.toString(array1));
 
         System.out.println("/* Четвертое задание */");
-        Arrays.sort(array1);
         System.out.println(getFirstUnique(array1) == null ? "Нет уникального" : getFirstUnique(array1));
     }
 
