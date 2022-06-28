@@ -23,10 +23,9 @@ public class Part2 {
 
         System.out.println("/* Второе задание */");
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите длину массива: ");
-        int lenght = scan.nextInt();
-        int[] array1 = new int[lenght];
-        for (int i = 0; i < lenght; i++) {
+        int length = Sort.getArrayLength();
+        int[] array1 = new int[length];
+        for (int i = 0; i < length; i++) {
             System.out.print("Введите " + i + " элемент массива: ");
             array1[i] = scan.nextInt();
         }

@@ -19,12 +19,12 @@ public class Sort {
     }
 
     static int getArrayLength() {
-        System.out.print("Укажите размерность массива: ");
+        System.out.print("Укажите длину массива: ");
         Scanner scan = new Scanner(System.in);
         int length = scan.nextInt();
         while (length < 1) {
-            System.out.println("Размерность не может быть меньше 1");
-            System.out.print("Укажите размерность массива: ");
+            System.out.println("Длина массива не может быть меньше 1");
+            System.out.print("Укажите длину массива: ");
             length = scan.nextInt();
         }
         return length;

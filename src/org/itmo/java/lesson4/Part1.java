@@ -60,8 +60,8 @@ public class Part1 {
 
         System.out.println("/* Шестое задание  */");
         Boolean result = false;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == 1 || array[i] == 3) {
+        for (int i : array1) {
+            if (i == 1 || i == 3) {
                 result = true;
                 break;
             }
