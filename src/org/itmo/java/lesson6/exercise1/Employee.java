@@ -25,6 +25,7 @@ public class Employee extends Human {
 
     public void setPin() {
         this.pin = generatePin();
+        System.out.println("Ваш новый pin: " + pin);
     }
 
     @Override
@@ -41,7 +42,6 @@ public class Employee extends Human {
 
     public int generatePin() {
         int pin = (int) (Math.random() * 1000);
-        System.out.println("Ваш новый pin: " + pin);
         return pin;
     }
 }
