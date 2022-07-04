@@ -13,6 +13,11 @@ public class Test {
         Employee employee = new Employee("Дарья", "Мелихова", "Сбербанк");
         System.out.println(client.getInfo());
         System.out.println(employee.getInfo());
+        employee.setPin();
+        client.setPhoneNumber(79519586111L);
+        System.out.println(client.askConfirm() ? "операция разрешена" : "операция запрещена");
+        System.out.println(employee.askConfirm() ? "операция разрешена" : "операция запрещена");
+
 
         Truck truck = new Truck(10000000,"Volvo FH", 'w', 200.04F, 10,30000000);
         truck.outPut();
