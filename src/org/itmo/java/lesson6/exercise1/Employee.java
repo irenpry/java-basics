@@ -2,7 +2,7 @@ package org.itmo.java.lesson6.exercise1;
 
 import java.util.Scanner;
 
-public class Employee extends Human implements Confirmer{
+public class Employee extends Human {
     private String bank;
     private Integer pin;
 
@@ -36,10 +36,7 @@ public class Employee extends Human implements Confirmer{
     public boolean askConfirm() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите ваш пин-код сотрудника ");
-        if (scan.nextInt() == this.pin) {
-            return true;
-        }
-        return false;
+        return scan.nextInt() == this.pin;
     }
 
     public int generatePin() {

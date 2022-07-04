@@ -4,8 +4,8 @@ import org.itmo.java.lesson6.exercise1.Client;
 import org.itmo.java.lesson6.exercise1.Employee;
 import org.itmo.java.lesson6.exercise3.Truck;
 import org.itmo.java.lesson6.exercise4.Child;
-import org.itmo.java.lesson6.exercise5.Subscriber;
 import org.itmo.java.lesson6.exercise5.User;
+import org.itmo.java.lesson6.exercise5.UntitledUser;
 
 public class Test {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Test {
         System.out.println(employee.askConfirm() ? "операция разрешена" : "операция запрещена");
 
 
-        Truck truck = new Truck(10000000,"Volvo FH", 'w', 200.04F, 10,30000000);
+        Truck truck = new Truck(10000, "Volvo FH", 'w', 200.04F, 10, 30000);
         truck.outPut();
         truck.newWheels(12);
         truck.outPut();
@@ -27,10 +27,12 @@ public class Test {
         Child child = new Child(4);
         child.printNumber();
 
-        User user = new User("Роман");
-        user.enterAge();
-        Subscriber subscriber = new Subscriber("Женя");
-        subscriber.enterAge();
+        UntitledUser user = new UntitledUser();
+        user.enterInfo();
+        System.out.println(user);
+        User subscriber = new User();
+        subscriber.enterInfo();
+        System.out.println(subscriber);
 
     }
 }

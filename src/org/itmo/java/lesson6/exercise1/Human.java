@@ -1,6 +1,6 @@
 package org.itmo.java.lesson6.exercise1;
 
-public abstract class Human {
+public abstract class Human implements Confirmer {
     private String name;
     private String surname;
     private Long phoneNumber;

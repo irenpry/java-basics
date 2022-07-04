@@ -15,7 +15,7 @@ public class Truck extends Car {
     }
 
     @Override
-    public void outPut () {
+    public void outPut() {
         super.outPut();
         System.out.println("Максимальный вес - " + maxWeight + ", количество колес - " + wheelsCount);
     }
