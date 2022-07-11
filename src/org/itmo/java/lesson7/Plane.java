@@ -15,19 +15,25 @@ public class Plane {
         Wing(int weight) {
             this.weight = weight;
         }
-        
+
         public String getWingWeight() {
-            return weight + " тонн";
+            if (weight % 10 == 1) {
+                return weight + " тонна";
+            } else if (weight % 10 < 5) {
+                return weight + " тонны";
+            } else {
+                return weight + " тонн";
+            }
         }
     }
 
     void printPlaneInfo() {
-        System.out.println("У самолета " + model + " вес крыла: " + wing.getWingWeight());
+        System.out.printf("У самолета %s вес крыла %s\n", model, wing.getWingWeight());
     }
 
     public static void main(String[] args) {
-        Plane boeing = new Plane("Boeing 737",43);
-        Plane airbus = new Plane("Airbus A320",46);
+        Plane boeing = new Plane("Boeing 737", 43);
+        Plane airbus = new Plane("Airbus A320", 46);
         boeing.printPlaneInfo();
         airbus.printPlaneInfo();
     }
