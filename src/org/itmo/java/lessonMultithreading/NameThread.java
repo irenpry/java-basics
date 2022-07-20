@@ -2,7 +2,7 @@ package org.itmo.java.lessonMultithreading;
 
 public class NameThread extends Thread {
     private String name;
-    private static final Object stop = new Object();
+    private static final Object monitor = new Object();
 
     public NameThread(String name) {
         this.name = name;
@@ -11,11 +11,11 @@ public class NameThread extends Thread {
     @Override
     public void run() {
         while (true) {
-            synchronized (stop) {
+            synchronized (monitor) {
                 try {
-                System.out.println(this.name);
-                stop.notify();
-                stop.wait();
+                    System.out.println(this.name);
+                    monitor.notify();
+                    monitor.wait();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

@@ -1,7 +1,5 @@
 package org.itmo.java.lessonMultithreading;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -26,16 +24,16 @@ public class Main {
 //        }
 //        System.out.println(thread.getState());
         /* 3 */
-        Counter counter = new Counter();
-        Runnable r = () -> {
-            for (int i = 0; i < 1000; i++) {
-                counter.increment();
-            }
-        };
-        for (int i = 0; i < 100; i++) {
-            Thread thread = new Thread(r);
-            thread.start();
-        }
+//        Counter counter = new Counter();
+//        Runnable r = () -> {
+//            for (int i = 0; i < 1000; i++) {
+//                counter.increment();
+//            }
+//        };
+//        for (int i = 0; i < 100; i++) {
+//            Thread thread = new Thread(r);
+//            thread.start();
+//        }
         /* 4 */
         new NameThread("Первый").start();
         new NameThread("Второй").start();
