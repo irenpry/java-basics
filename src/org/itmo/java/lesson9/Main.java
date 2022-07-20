@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        /** 1 */
+        /* 1 */
         Collection<String> collection = new ArrayList<>();
         collection.add("test");
         collection.add("test");
@@ -12,43 +12,37 @@ public class Main {
         for (String s : collection) {
             System.out.println(s);
         }
-        dropDuplicate(collection);
         System.out.println("Убрали дубликаты");
-        for (String s : collection) {
+        for (String s : dropDuplicate(collection)) {
             System.out.println(s);
         }
 
-        /** 2 */
+        /* 2 */
         List<Integer> arrayList = new ArrayList<>();
         fillList(arrayList, 1_000_000);
-        getRandomItem(arrayList,100_000);
+        getRandomItem(arrayList, 100_000);
         List<Integer> linkedList = new LinkedList<>();
         fillList(linkedList, 1_000_000);
-        getRandomItem(linkedList,10);
+        getRandomItem(linkedList, 10);
 
-        /** 3 */
-        List<User> userList = new ArrayList<>();
+        /* 3 */
         Points points = new Points();
         for (int i = 0; i < 100; i++) {
-            User user = new User();
-            userList.add(user);
-            points.addRandomPoints(user);
+            points.addRandomPoints(new User());
         }
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        for (User user : userList) {
-            if (user.getName().equals(name)) {
-                System.out.printf("У юзера %s %d очков",name,points.getPoints(user));
-                break;
-            }
+        int p = points.getPointsByName(name);
+        if (p != -1) {
+            System.out.printf("У пользователя %s %d очков\n", name, p);
+        } else {
+            System.out.println("Неизвестный пользователь");
         }
     }
 
-    public static void dropDuplicate(Collection<String> collection) {
-        Set<String> set = new HashSet<>();
-        set.addAll(collection);
-        collection.clear();
-        collection.addAll(set);
+    public static List<String> dropDuplicate(Collection<String> collection) {
+        Set<String> set = new HashSet<>(collection);
+        return new ArrayList<>(set);
     }
 
     public static void fillList(List<Integer> list, int count) {
@@ -65,4 +59,5 @@ public class Main {
         }
         System.out.printf("На выборку %d элементов из %s ушло %f милисекунд\n", count, list.getClass(), (double) System.currentTimeMillis() - time);
     }
+
 }

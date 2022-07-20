@@ -6,16 +6,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        /** 1 */
+        /* 1 */
         File file = new File("files/test.txt");
         List<String> list = getListFromFile(file);
-        /** 2 */
+        /* 2 */
         File outFile = new File("files/output.txt");
         writeToFile("append", outFile);
-        /** 3 */
+        /* 3 */
         File resFile = new File("files/result.txt");
-        concatFiles(file, outFile);
-        /** 4 */
+        concatFiles(file, outFile, resFile);
+        /* 4 */
         File replaceFile = new File("files/replace.txt");
         replaceSomeChars(outFile, replaceFile);
     }
@@ -54,11 +54,13 @@ public class Main {
 //        }
 //    }
 
-    public static void concatFiles(File file1, File file2) {
-        List<String> list = getListFromFile(file2);
+    public static void concatFiles(File file1, File file2, File resultFile) {
+        List<String> list = getListFromFile(file1);
+        list.addAll(getListFromFile(file2));
         for (String s : list) {
-            writeToFile(s, file1);
+            writeToFile(s, resultFile);
         }
+
     }
 
     public static void replaceSomeChars(File file1, File file2) {
@@ -67,7 +69,7 @@ public class Main {
             byte[] buffer = new byte[inputFile.available()];
             inputFile.read(buffer);
             for (int i = 0; i < buffer.length; i++) {
-                if (!Character.isLetterOrDigit((char) buffer[i])) {
+                if (!Character.isLetterOrDigit((char) buffer[i]) && buffer[i] != 10 && buffer[i] != 13) {
                     buffer[i] = (byte) '$';
                 }
             }

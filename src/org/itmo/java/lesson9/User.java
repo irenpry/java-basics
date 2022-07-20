@@ -4,11 +4,11 @@ public class User {
     private String name;
     static Integer userCount = 0;
 
-    User() {
+    public User() {
         this(generateUserName());
     }
 
-    User(String name) {
+    public User(String name) {
         this.name = name;
         userCount++;
     }
