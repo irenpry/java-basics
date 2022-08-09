@@ -1,5 +1,5 @@
 package org.itmo.java.lessonMultithreading;
-
+//test
 class Counter {
     int count = 0;
 
